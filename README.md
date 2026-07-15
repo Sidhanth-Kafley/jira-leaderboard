@@ -1,8 +1,27 @@
 # Forge Leaderboard Documentation
 
+# Jira Leaderboard
+
+A real-time leaderboard application built using **Atlassian Forge**, **TypeScript**, and **React** as part of the **UNSW COMP9900 Industry Capstone** in collaboration with **Atlassian**.
+
+The application integrates directly into **Jira Spaces** and enables teams to recognise and encourage contributions through a configurable, real-time leaderboard. Administrators can customise scoring rules, filter issues using JQL, and view live rankings that automatically update as work is completed. The application leverages Jira Cloud REST APIs, Forge Storage, and Forge Realtime APIs to provide persistent configuration, real-time synchronisation, and a seamless native Jira experience.
+
+---
+
 ## App Summary
 
-This project contains a Forge app written in Typescript that displays a leaderboard for contributions in a Jira Space (fka "Project").
+This project contains an Atlassian Forge application written in **TypeScript** that displays a configurable leaderboard for contributions within Jira Spaces.
+
+### Features
+
+- Real-time leaderboard displaying user rankings
+- Configurable scoring rules for administrators
+- JQL-based issue filtering
+- Real-time synchronisation using Forge Realtime APIs
+- Jira Cloud REST API integration
+- Persistent configuration using Forge Storage
+- Native user interface built with Forge UI Kit
+- Automated testing and continuous integration using GitHub Actions
 
 ## Testing
 
