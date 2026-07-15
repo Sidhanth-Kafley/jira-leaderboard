@@ -1,0 +1,46 @@
+permissions:
+  scopes:
+    - read:jira-work
+    - write:jira-work
+    - read:jira-user
+    - storage:app
+    - read:board-scope:jira-software
+    - read:project:jira
+    - read:sprint:jira-software
+    - read:permission:jira
+
+modules:
+  trigger:
+    - key: issue-completed
+      function: update-leaderboard
+      events:
+        - avi:jira:updated:issue
+      filter:
+        ignoreSelf: true
+        expression: event.issue.fields.assignee != null &&
+          (event.changelog.items[0].fromString == "Done" ||
+          event.changelog.items[0].toString == "Done" ||
+          event.changelog.items[0].fromString == "In Progress" ||
+          event.changelog.items[0].toString == "In Progress")
+
+  jira:projectPage:
+    - key: leaderboard-page
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: Leaderboard
+  function:
+    - key: resolver
+      handler: resolver.handler
+    - key: update-leaderboard
+      handler: index.run
+resources:
+  - key: main
+    path: src/frontend/index.tsx
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/63b6a9e4-8616-4124-942d-989a55704822 #your local own app id-->run 'forge register'
