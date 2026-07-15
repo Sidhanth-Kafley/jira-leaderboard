@@ -6,7 +6,6 @@ A real-time leaderboard application built using **Atlassian Forge**, **TypeScrip
 
 The application integrates directly into **Jira Spaces** and enables teams to recognise and encourage contributions through a configurable, real-time leaderboard. Administrators can customise scoring rules, filter issues using JQL, and view live rankings that automatically update as work is completed. The application leverages Jira Cloud REST APIs, Forge Storage, and Forge Realtime APIs to provide persistent configuration, real-time synchronisation, and a seamless native Jira experience.
 
----
 
 ## App Summary
 
